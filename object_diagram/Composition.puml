@@ -1,0 +1,57 @@
+@startuml
+
+object "<u>phpDemo1:Folder</u>" as demo1{
+    name = "php_demo1"
+}
+
+object "<u>sourceFiles:Folder</u>" as srce{
+    name = "Source Files"
+}
+
+object "<u>phalcon:Folder</u>" as phlcn{
+    name = ".phalcon"
+}
+
+object "<u>cache:Folder</u>" as cache{
+    name = "cache"
+}
+
+object "<u>publicFolder:Folder</u>" as pblc{
+    name = "public"
+}
+
+object "<u>htaccess:File</u>" as htacc{
+    name = ".htaccess"
+}
+
+object "<u>htrouter:File</u>" as htrtr{
+    name = ".htrouter.php"
+}
+
+object "<u>indexHtml:File</u>" as idxHtml{
+    name = "index.html"
+}
+
+object "<u>includePath:Folder</u>" as incPth{
+    name = "Include Path"
+}
+
+object "<u>remoteFiles:Folder</u>" as rmtFi{
+    name = "Remote Files"
+}
+
+
+' File Hierarchy
+demo1 *-- srce
+demo1 *-- incPth
+demo1 *-- rmtFi
+
+srce *-- phlcn
+srce *-- cache
+srce *-- pblc
+
+pblc *-- htacc
+pblc *-- htrtr
+pblc *-- idxHtml
+
+@enduml
