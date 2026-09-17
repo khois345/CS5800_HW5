@@ -1,0 +1,22 @@
+@startuml
+
+object "<u>course:Course</u>" as c{
+    courseName = "CS 5800 -- Software Engineering"
+}
+
+object "<u>instructor:Instructor</u>" as instr{
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "<u>textbook:Textbook</u>" as txtbk{
+    title = "Clean Code"
+    author = "Robert C. Martin"
+    publisher = "Prentice Hall"
+}
+
+c o-- instr
+c o-- txtbk
+
+@enduml
