@@ -1,0 +1,57 @@
+@startuml
+
+class Course {
+    - courseName : String
+    - instructors : Instructor[]
+    - textbooks : Textbook[]
+    --
+    + Course(courseName : String, instructors : Instructor[], textbooks : Textbook[])
+    ..
+    + getCourseName() : String
+    + getInstructors() : Instructor[]
+    + getTextbooks() : Textbook[]
+    + setCourseName(courseName : String) : void
+    + setInstructors(instructors : Instructor[]) : void
+    + setTextbooks(textbooks : Textbook[]) : void
+    + print() : void
+}
+
+class Instructor {
+    - firstName : String
+    - lastName : String
+    - officeNumber : String
+    --
+    + Instructor(firstName : String, lastName : String, officeNumber : String)
+    ..
+    + getFirstName() : String
+    + getLastName() : String
+    + getOfficeNumber() : String
+    + setFirstName(firstName : String) : void
+    + setLastName(lastName : String) : void
+    + setOfficeNumber(officeNumber : String) : void
+}
+
+class Textbook {
+    - title : String
+    - author : String
+    - publisher : String
+    --
+    + Textbook(title : String, author : String, publisher : String)
+    ..
+    + getTitle() : String
+    + getAuthor() : String
+    + getPublisher() : String
+    + setTitle(title : String) : void
+    + setAuthor(author : String) : void
+    + setPublisher(publisher : String) : void
+}
+
+' Before step 6
+'Course o-- Instructor
+'Course o-- Textbook
+
+' After step 6
+Course o-- "many" Instructor
+Course o-- "many" Textbook
+
+@enduml
