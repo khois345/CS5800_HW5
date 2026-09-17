@@ -1,0 +1,36 @@
+@startuml
+
+class File {
+    - name : String
+    --
+    + File(name : String)
+    ..
+    + getName() : String
+    + setName(name : String) : void
+    + print() : void
+}
+
+class Folder {
+    - name : String
+    - files : File[]
+    - subFolders : Folder[]
+    --
+    + Folder(name : String, files : File[], subFolders : Folder[])
+    ..
+    + getName() : String
+    + getFiles() : File[]
+    + getSubFolders() : Folder[]
+    + setName(name : String) : void
+    + setFiles(files : File[]) : void
+    + setSubFolders(subFolders : Folder[]) : void
+    + print() : void
+    ' override
+    - print(prefix : String, indentation : String) : void
+    + deleteSubFolder(folderName : String) : void
+}
+
+' Composition
+Folder *-- "many" File
+Folder *-- "many" Folder : subFolders
+
+@enduml
