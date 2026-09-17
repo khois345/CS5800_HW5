@@ -1,0 +1,28 @@
+@startuml
+
+' Array
+object "<u>ships:Ship[]</u>" as ships{
+}
+
+object "<u>titanic:Ship</u>" as titanic{
+    name = "Titanic"
+    yearBuilt = "1912"
+}
+
+object "<u>disneyWish:CruiseShip</u>" as dw{
+    name = "Disney Wish"
+    yearBuilt = "2022"
+    maxPassengers = 4000
+}
+
+object "<u>everAlot:CargoShip</u>" as ea{
+    name = "Ever Alot"
+    yearBuilt = "2022"
+    cargoCapacity = 240000
+}
+
+ships --> titanic : [0]
+ships --> dw : [1]
+ships --> ea : [2]
+
+@enduml
